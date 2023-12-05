@@ -1,0 +1,31 @@
+$Background-Color : #f7f6fb;
+$Hover-Background-Color: hsl(0, 0%, 93%);
+$Text-Color: #170738;
+
+.CardComponent{
+    background-color: $Background-Color;
+    transition: background-color 0.3s ease;
+    color: $Text-Color;
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    align-items: center;
+    border-radius: 20px;
+    width: 30%;
+    .CardComponent-Wrapper{
+        width: 80%;
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .CardComponent-Top{
+            height: 32px;
+            width: 32px;
+        }
+    }
+}
+
+.CardComponent:hover{
+    background-color: $Hover-Background-Color;
+    cursor: pointer;
+}

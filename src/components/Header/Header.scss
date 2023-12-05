@@ -1,0 +1,108 @@
+header {
+    margin:0;
+    padding:0;
+    /* Your default header styles */
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    transition: background-color 0.4s ease;
+    display: flex;
+    justify-content: center;
+    height: 85px;
+    z-index: 1;
+    nav{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .Header-Wrapper{
+            display: flex;
+            justify-content: space-around;
+            .Header-Wrapper-Logo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img{
+                    height: 60px;
+                }
+            }
+            .Header-Wrapper-Navigation{
+                width: 45%;
+                #Navigation-Buttons a{
+                    margin-right: 15px;
+                }
+                .Navigation-Link{
+                    color: white;
+                    font-weight: bold;
+                }
+            } 
+            .Header-Wrapper-Navigation ul{
+                align-items: center;
+                align-items: center;
+                width: 100%;
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                a{
+                    text-decoration: none !important;
+                }
+            }
+        }
+    } 
+}
+
+header.scrolled {
+    transition: background-color 0.4s ease; 
+    position: fixed;
+    top: 0; /* Position at the top */
+    width: 100%; /* Full width */
+    background-color: white; /* Change background color when scrolled */
+    z-index: 1000; /* Set a z-index to make sure it's above other elements */
+    /* Other styles for the scrolled state */
+    color: white;
+    .Navigation-Link{
+        color: black;
+    }
+}
+.Navigation-Link.scrolled{
+    color: black !important;
+}
+
+/* Styles for the button */
+.fill-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Pseudo-element for the fill effect */
+  .fill-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #12deda;
+    opacity: 0; /* Initially set the opacity to 0 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and transform */
+    transform-origin: bottom;
+    transform: scaleY(0);
+    z-index: -1;
+  }
+  
+  /* Hover effect to increase pseudo-element's height and change opacity */
+  .fill-button:hover::before {
+    opacity: 1; /* Make the pseudo-element fully visible */
+    transform: scaleY(1);
+}
+.fill-button:hover{
+    color: beige !important;
+}
+  

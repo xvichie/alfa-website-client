@@ -1,0 +1,30 @@
+.ReviewComponent{
+    margin:0;
+    padding: 0;
+    .ReviewComponent-Paper{
+        height: 320px;
+        width: 1000px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        .Paper-Left{
+            img{
+                height: 256px;
+                width: 256px;
+            }
+        }
+        .Paper-Middle{
+            padding-bottom: 180px;
+            .Middle-Quotes{
+                height: 64px !important;
+                width: 64px !important;
+            }
+        }
+        .Paper-Right{
+            .Right-Top{
+                font-size: 20px;
+            }
+        }
+    }
+}
