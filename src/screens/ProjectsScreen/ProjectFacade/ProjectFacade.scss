@@ -1,0 +1,36 @@
+.ProjectFacade {
+    position: relative;
+  
+    img {
+      height: 100%;
+      width: 100%;
+      transition: filter 0.3s ease; /* Adding transition for the 'filter' property */
+    }
+  
+    .Facade-Hidden {
+      color: white;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      font-size: 24px;
+      font-weight: bold;
+      visibility: hidden;
+      transition: visibility 0.3s ease, opacity 0.3s ease; /* Adding transitions for 'visibility' and 'opacity' */
+      opacity: 0;
+    }
+  }
+  
+  .ProjectFacade:hover {
+    cursor: pointer;
+  
+    img {
+      filter: brightness(70%);
+      background-blend-mode: multiply;
+    }
+  
+    .Facade-Hidden {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  

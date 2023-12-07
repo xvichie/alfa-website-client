@@ -1,0 +1,19 @@
+.InsightsComponent{
+    // height :600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebeded;
+    .Insights-Wrapper{
+        width: 90%;
+        .Insights-Label{
+            text-align: center;
+        }
+        .Insights-Posts{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 40px;
+        }
+    }
+}

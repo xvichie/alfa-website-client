@@ -1,0 +1,38 @@
+.RegisterScreen{
+    height: 100vh;
+    background-image: url("https://sweeftdigital.com/assets/updatedDesign/images/blogtest.jpg");
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .RegisterScreen-Wrapper{
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        .Register-Left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            img{
+                height: 192px;
+            }
+        }
+        .Register-Right{
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            // align-items: center;
+            padding-bottom: 40px;
+            border-radius: 15px;
+
+            .Right-Wrapper{
+                width: 90%;
+                // height: 95%;
+            }
+        }
+    }
+}

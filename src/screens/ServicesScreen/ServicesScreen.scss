@@ -1,0 +1,69 @@
+.ServicesScreen{
+    // margin: 0;
+    // padding: 0;
+    // height: 400px;
+    .Services-Main{
+        background-image: url("https://sweeftdigital.com/assets/updatedDesignDec21/heros/services-hero.svg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .Main-Wrapper{
+            width: 75%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .Main-Left{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h1{
+                    color: white;
+                    font-size: 76px;
+                    line-height: 80px;
+                    margin-bottom: 0;
+                }
+                h4{
+                    color: greenyellow;
+                    font-size: 16px;
+                }
+            }
+            .Main-Right{
+                width: 600px;
+                h2{
+                    color: white;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .Services-Services{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .Services-Wrapper{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            .Services-Label{
+                display: flex;
+                justify-content: center;
+                h1{
+                    font-size: 48px;
+                }
+            }
+            .Services-List{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 15px;
+                column-gap: 15px;
+            }
+        }
+        margin-bottom: 50px;
+    }
+}

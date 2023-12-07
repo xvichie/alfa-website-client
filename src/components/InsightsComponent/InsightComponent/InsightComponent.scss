@@ -1,0 +1,39 @@
+.InsightComponent{
+    background-color: white;
+    align-self: center;
+    height: 420px;
+    width: 98%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .Insight-Wrapper{
+        width: 90% !important;
+        .Insight-Image{
+            text-align: center;
+            img{
+            width: 316px;
+            height: 256px;
+            }
+        }
+        .Insight-Bottom{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .Bottom-Title{
+                font-size: 36px;
+                font-weight: bold;
+            }
+            .Bottom-Text{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                .Bottom-Readmore{
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

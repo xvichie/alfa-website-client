@@ -105,4 +105,21 @@ header.scrolled {
 .fill-button:hover{
     color: beige !important;
 }
-  
+
+
+
+.active{
+    color: none !important;
+    -webkit-text-stroke: 1px #12deda !important;
+}
+// .active::after {
+//     content: "";
+//     position: absolute;
+//     width: 4px;
+//     height: 4px;
+//     border-radius: 50%;
+//     bottom: -1rem;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     background: #f27cac;
+// }

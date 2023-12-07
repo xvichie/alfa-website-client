@@ -9,6 +9,8 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 
 import CardComponent from '../../components/CardComponent/CardComponent';
 import ReviewsComponent from '../../components/ReviewsComponent/ReviewsComponent';
+import InsightsComponent from '../../components/InsightsComponent/InsightsComponent';
+import Footer from '../../components/Footer/Footer';
 
 
 function HomeScreen() {
@@ -31,7 +33,7 @@ function HomeScreen() {
             </h2>
           </div>
           <div className="HomeLabels-ContactUs">
-            <Button variant='outlined'>
+            <Button variant='outlined' className='fill-button-main'>
                 Contact Us
             </Button>
           </div>
@@ -95,6 +97,9 @@ function HomeScreen() {
       </div>
       <div className="Home-Reviews">
         <ReviewsComponent></ReviewsComponent>
+      </div>
+      <div className="Home-Insights">
+        <InsightsComponent></InsightsComponent>
       </div>
     </div>
   )

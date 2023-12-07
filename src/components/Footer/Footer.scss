@@ -1,0 +1,53 @@
+$Background-Color : #170738;
+
+.Footer{
+    height: 100px;
+    background-color: $Background-Color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Footer-Wrapper{
+        width: 85%;
+        .Footer-Top{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            .Top-Policies{
+                color: white;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                font-size: 16px !important;
+                a{
+                    color: white;
+                }
+            }
+            .Top-Logo{
+                display: flex;
+                justify-content: center;
+                img{
+                    height: 64px;
+                }
+            }
+            .Top-Socials{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ul{
+                    list-style: none;
+                    display: flex;
+                    li{
+                        text-decoration: none;
+                        li a{
+                            text-decoration: none;
+                        }
+                        .Socials-Icon{
+                            width: 32px;
+                            height: 32px;
+                            color: white !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

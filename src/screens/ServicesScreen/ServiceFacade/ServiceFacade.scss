@@ -2,7 +2,7 @@ $Background-Color : #f7f6fb;
 $Hover-Background-Color: hsl(0, 0%, 93%);
 $Text-Color: #170738;
 
-.CardComponent{
+.ServiceFacade{
     background-color: $Background-Color;
     transition: background-color 0.3s ease;
     color: $Text-Color;
@@ -11,9 +11,9 @@ $Text-Color: #170738;
     height: 250px;
     align-items: center;
     border-radius: 20px;
-    width: 32% !important;
+    // width: 95%;
     .CardComponent-Wrapper{
-        width: 80%;
+        // width: 100%;
         // background-color: red;
         display: flex;
         flex-direction: column;
@@ -25,7 +25,7 @@ $Text-Color: #170738;
     }
 }
 
-.CardComponent:hover{
+.ServiceFacade:hover{
     background-color: $Hover-Background-Color;
     cursor: pointer;
 }

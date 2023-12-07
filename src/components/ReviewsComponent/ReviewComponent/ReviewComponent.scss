@@ -8,23 +8,48 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        .Paper-Left{
-            img{
-                height: 256px;
-                width: 256px;
+        border-radius: 20px;
+        .Paper-Wrapper{
+            width: 90%;
+            display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+            .Paper-Left{
+                img{
+                    height: 256px;
+                    width: 256px;
+                }
             }
-        }
-        .Paper-Middle{
-            padding-bottom: 180px;
-            .Middle-Quotes{
-                height: 64px !important;
-                width: 64px !important;
+            .Paper-Middle{
+                padding-bottom: 220px;
+                .Middle-Quotes{
+                    height: 64px !important;
+                    width: 64px !important;
+                }
             }
-        }
-        .Paper-Right{
-            .Right-Top{
-                font-size: 20px;
-            }
+            .Paper-Right{
+                text-align: left;
+                display: flex !important;
+                flex-direction: column;
+                justify-content: space-around;
+                .Right-Top{
+                    font-size: 20px;
+                    // position: absolute;
+                    top: 0;
+                    padding-bottom: 25px;
+                }
+                .Right-Bottom{
+                    h2,h3,h5{
+                        margin-top:10px;
+                        margin-bottom: 10px;
+                    }
+                    h5{
+                        align-items: center !important;
+                    }
+                }
+    
+            }       
         }
     }
 }

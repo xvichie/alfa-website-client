@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Header.scss'; // Import your CSS file for header styles
 import { Button } from '@mui/material';
 
@@ -27,32 +27,34 @@ const Header = () => {
       <nav>
         <div className="Header-Wrapper">
           <div className="Header-Wrapper-Logo">
-            <Link to={`/`}>
+            <NavLink to={`/`}>
               {scrolled ?
                 <img src={process.env.PUBLIC_URL+'/images/Logo-Black-Text.png'} alt="" />
                 :
                 <img src={process.env.PUBLIC_URL+'/images/Logo-White-Text.png'} alt="" />
               }
-            </Link>
+            </NavLink>
           </div>
           <div className="Header-Wrapper-Navigation">
             <ul color='primary'>
               <li>
-                <Link className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Services`}>Services</Link>
+                <NavLink 
+                className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} 
+                to={`/Services`}>Services</NavLink>
               </li>
               <li>
-                <Link className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Projects`}>Projects</Link>
+                <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Projects`}>Projects</NavLink>
               </li>
               <li>
-                <Link className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Insights`}>Insights</Link>
+                <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Insights`}>Insights</NavLink>
               </li>
               <li id='Navigation-Buttons'>
-                <Link to={`/Contact`}>
+                <NavLink to={`/Contact`}>
                   <Button color='primary' variant='outlined' className='fill-button'>
                       Contact Us
                   </Button>
-                </Link>
-                <Link to={`/Login`}>
+                </NavLink>
+                <Link to={`/Login`}> 
                   <Button color='primary' variant='contained'>
                       login
                   </Button>
