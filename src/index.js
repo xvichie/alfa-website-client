@@ -5,6 +5,13 @@ import App from './App';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './themes/theme';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+
+import { Provider } from 'react-redux'
+import { store } from './redux/store';
+
+
+
+
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ServicesScreen from './screens/ServicesScreen/ServicesScreen';
 import ProjectsScreen from './screens/ProjectsScreen/ProjectsScreen';
@@ -27,11 +34,13 @@ const router = createBrowserRouter(createRoutesFromElements(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router}>
+          <App />
+        </RouterProvider>
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 

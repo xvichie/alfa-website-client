@@ -3,15 +3,45 @@ import './LoginScreen.scss';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setToken } from '../../redux/slices/authSlice';
+
+import { useNavigate } from 'react-router-dom';
 
 function LoginScreen() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      //
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const data = {
+            email: email,
+            password: password
+        };
+
+        try {
+            const response = await createAPIEndpoint(ENDPOINTS.login).post(data);
+
+            if (response.status === 200) {
+                console.log(response.data);
+                dispatch(setToken(response.data));
+                navigate('/');
+                navigate(0);
+
+            } else {
+                console.error('Login failed:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
   return (
@@ -26,7 +56,7 @@ function LoginScreen() {
                     <h3>Don't Have An Acount? <a href="/register">Sign Up Now</a></h3>
                     <form onSubmit={handleSubmit}>
                             <TextField
-                            className='TextField'
+                                className='TextField'
                                 fullWidth
                                 label="Email"
                                 value={email}
