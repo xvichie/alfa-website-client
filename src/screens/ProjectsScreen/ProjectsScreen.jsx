@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ProjectsScreen.scss';
 import ServiceCardComponent from '../../components/ServiceCardComponent/ServiceCardComponent';
 import ProjectFacade from './ProjectFacade/ProjectFacade';
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
 
 function ProjectsScreen() {
     const [projects,setProjects] = useState([]);
@@ -9,33 +10,45 @@ function ProjectsScreen() {
     const TempImage = 'https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/projects/5546a652-702b-43ac-8d53-1d6c1da49ab9.PNG';
 
     useEffect(() => {
-        setProjects([
-            {
-                title:"Matka.ge",
-                shortDescription:"magari tvini mogvetyna",
-                mainDescription:"cvetshi tvini mogvetyna",
-                description:"kide tvini moityna",
-                sector:"education",
-                year: 2023,
-                challenge:"stayin alive",
-                whatWeDid: "deda movityanit",
-                images: [TempImage],
-                tags: ['React','Node','auth0']
-            },
-            {
-                title:"Matka.ge",
-                shortDescription:"magari tvini mogvetyna",
-                mainDescription:"cvetshi tvini mogvetyna",
-                description:"kide tvini moityna",
-                sector:"education",
-                year: 2023,
-                challenge:"stayin alive",
-                whatWeDid: "deda movityanit",
-                images: [TempImage],
-                tags: ['React','Node','auth0']
-            }]
-        )
+        // setProjects([
+        //     {
+        //         title:"Matka.ge",
+        //         shortDescription:"magari tvini mogvetyna",
+        //         mainDescription:"cvetshi tvini mogvetyna",
+        //         description:"kide tvini moityna",
+        //         sector:"education",
+        //         year: 2023,
+        //         challenge:"stayin alive",
+        //         whatWeDid: "deda movityanit",
+        //         images: [TempImage],
+        //         tags: ['React','Node','auth0']
+        //     },
+        //     {
+        //         title:"Matka.ge",
+        //         shortDescription:"magari tvini mogvetyna",
+        //         mainDescription:"cvetshi tvini mogvetyna",
+        //         description:"kide tvini moityna",
+        //         sector:"education",
+        //         year: 2023,
+        //         challenge:"stayin alive",
+        //         whatWeDid: "deda movityanit",
+        //         images: [TempImage],
+        //         tags: ['React','Node','auth0']
+        //     }]
+        // )
+
+        const fetchProjects = async () => {
+            try{
+                const response = await createAPIEndpoint(ENDPOINTS.projects).get();
+                setProjects(response.data);
+            }catch{
+                console.error("Error Fetching Projects");
+            }
+        };
+        fetchProjects();
     },[]);
+
+    console.log(projects);
   return (
     <div className='ProjectsScreen'>
         <div className="Projects-Main">

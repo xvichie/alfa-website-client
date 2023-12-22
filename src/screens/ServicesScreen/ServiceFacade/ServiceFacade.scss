@@ -1,6 +1,7 @@
 $Background-Color : #f7f6fb;
 $Hover-Background-Color: hsl(0, 0%, 93%);
 $Text-Color: #170738;
+$Tag-Color: #462e75;
 
 .ServiceFacade{
     background-color: $Background-Color;
@@ -8,19 +9,38 @@ $Text-Color: #170738;
     color: $Text-Color;
     display: flex;
     justify-content: center;
-    height: 250px;
+    height: 310px;
     align-items: center;
     border-radius: 20px;
     // width: 95%;
-    .CardComponent-Wrapper{
-        // width: 100%;
+    .ServiceFacade-Wrapper{
+        width: 80%;
         // background-color: red;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        .CardComponent-Top{
-            height: 32px;
-            width: 32px;
+        justify-content: space-between;
+        .ServiceFacade-Top{
+            height: 48px;
+            width: 48px;
+        }
+        .ServiceFacade-Title{
+            font-size: 24px;
+            h3,h4{
+                margin-top: 20px;
+                margin-bottom: 5px;
+
+            }
+        }
+        .ServiceFacade-Description{
+            // margin-bottom: 5px;
+        }
+        .ServiceFacade-Tags{
+            h4{
+                color: $Tag-Color;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
         }
     }
 }

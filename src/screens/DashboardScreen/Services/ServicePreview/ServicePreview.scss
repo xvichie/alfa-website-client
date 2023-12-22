@@ -1,0 +1,31 @@
+$Background-Color : #f0f0f0;
+$Hover-Background-Color: hsl(0, 0%, 85%);
+$Text-Color: #170738;
+
+
+.ServicePreview{
+        background-color: $Background-Color;
+        transition: background-color 0.3s ease;
+        color: $Text-Color;
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        align-items: center;
+        border-radius: 20px;
+        width: 98%;
+        .ServicePreview-Wrapper{
+            width: 85%;
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .ServicePreview-Top{
+                height: 32px;
+                width: 32px;
+            }
+        }
+}
+.ServicePreview:hover{
+    background-color: $Hover-Background-Color;
+    cursor: pointer;
+}

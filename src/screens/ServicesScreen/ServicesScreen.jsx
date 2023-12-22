@@ -3,67 +3,79 @@ import './ServicesScreen.scss';
 import CardComponent from '../../components/CardComponent/CardComponent';
 import ServiceCardComponent from '../../components/ServiceCardComponent/ServiceCardComponent';
 import ServiceFacade from './ServiceFacade/ServiceFacade';
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
 
 function ServicesScreen() {
     const [services,setServices] = useState([]);
 
     useEffect(() => {
-        setServices([
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            },
-            {
-                title:"Jurnali",
-                description:"Agiwyobt Jurnals",
-                tags: ["node","react","angular","dedis trak"],
-                icon: "https://sweeftdigital.com/assets/backend-development.svg"
-            }]
-        )
+        // setServices([
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     },
+        //     {
+        //         title:"Jurnali",
+        //         description:"Agiwyobt Jurnals",
+        //         tags: ["node","react","angular","dedis trak"],
+        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
+        //     }]
+        // )
+
+        const fetchServices = async () => {
+            try{
+                const response = await createAPIEndpoint(ENDPOINTS.services).get();
+                setServices(response.data)
+            }
+            catch{
+                console.error("Error Fetching Services!");
+            }
+        };
+        fetchServices();
     },[]);
   return (
     <div className='ServicesScreen'>
@@ -97,7 +109,9 @@ function ServicesScreen() {
                                 key={index} 
                                 title={service.title} 
                                 description={service.description} 
-                                icon={<img src={service.icon} />} />
+                                icon={<img src={service.icon} height={48} />} 
+                                tags={service.tags}
+                                />
                         ))
                         ) : (
                         <p>Loading Services...</p>

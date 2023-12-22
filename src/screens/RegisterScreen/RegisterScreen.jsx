@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 import './RegisterScreen.scss';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setToken } from '../../redux/slices/authSlice';
+
+import { useNavigate } from 'react-router-dom';
 
 
 function RegisterScreen() {
@@ -11,9 +17,38 @@ function RegisterScreen() {
     const [password, setPassword] = useState("");
     const [confirmPassword,setConfirmPassword] = useState("");
   
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      //
+      
+
+      if(password == confirmPassword){
+        createAPIEndpoint(ENDPOINTS.register).post()
+        const data = {
+            email: email,
+            password: password
+        };
+
+        try {
+            const response = await createAPIEndpoint(ENDPOINTS.register).post(data);
+
+            if (response.status === 200) {
+                console.log("Successful Registration");
+
+                navigate('/');
+                navigate(0);
+
+            } else {
+                console.error('Login failed:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+      }
+
     };
 
   return (
@@ -62,8 +97,8 @@ function RegisterScreen() {
                             className='TextField'
                             fullWidth
                             label="Confirm Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             margin="normal"
                             required
                             // multiline

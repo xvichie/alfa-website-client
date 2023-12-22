@@ -130,11 +130,13 @@ const Header = () => {
                 ) :
                   <>
                   <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-                    <Button 
-                      variant='contained'
-                    >
-                      Dashboard
-                    </Button>
+                    <Link to={`/Dashboard`}> 
+                      <Button 
+                          variant='contained'
+                        >
+                        Dashboard
+                      </Button>
+                    </Link>
                     <Button
                       size="small"
                       aria-controls={open ? 'split-button-menu' : undefined}
