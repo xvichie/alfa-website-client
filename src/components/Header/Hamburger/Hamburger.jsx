@@ -1,59 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import './Header.scss'; // Import your CSS file for header styles
-
-import { Button, ClickAwayListener, Grow, InputLabel, MenuItem, MenuList, Paper, Popper, Select } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-
-import { slide as Menu } from 'react-burger-menu'
+import React, { useState, useEffect } from 'react';
+import './Hamburger.scss';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { ClickAwayListener, Grow, MenuItem, MenuList, Paper, Popper, Button, ButtonGroup } from '@mui/material';
+import { useDispatch } from 'react-redux';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { ButtonGroup } from 'react-bootstrap';
-import { logoutUser } from '../../redux/slices/authSlice';
-import Hamburger from './Hamburger/Hamburger';
-
-const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  const [loggedIn,setLoggedIn] = useState(false);
-
-  const [HamburgerStyle,SetHamburgerStyle] = useState("Hidden");
+import { logoutUser } from '../../../redux/slices/authSlice';
 
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token'));
-
-    console.log(token);
-
-    if(!token){
-      setLoggedIn(false);
-    }
-    else{
-
-      const isTokenExpired = token.expiresIn * 1000 > Date.now();
-      console.log(token.expiresIn);
-      console.log(Date.now());
-
-      if ((!isTokenExpired)) {
-        setLoggedIn(true);
-      } else {
-        setLoggedIn(false);
-        console.log("false");
-      }
-    }
-  }, []);
-
+function Hamburger({loggedIn}) {
+  const [isOpen, setIsOpen] = useState(false);
 
   const [open, setOpen] = useState(false);
   const anchorRef = React.useRef(null);
 
-  const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   const handleMenuItemClick = (event, index) => {
@@ -79,61 +41,62 @@ const Header = () => {
     navigate(0);
     navigate('/');
   }
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setScrolled(isScrolled);
-    };
 
+  const [scrolled, setScrolled] = useState(false);
+
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  
+
+  useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth > 1400) {
-        SetHamburgerStyle("Hidden")
-      }else {
-        SetHamburgerStyle("Open")
+        // setIsOpen(false); // Close the menu if the screen size is larger than 767px
+        // // console.log("nigga");
       }
     };
+    const handleScroll = () => {
+        const isScrolled = window.scrollY > 0;
+        setScrolled(isScrolled);
+      };
 
-    handleResize();
-
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <header className={`Header ${scrolled ? 'HeaderScrolled' : ''}`} >
-      <nav>
-        <div className="Header-Wrapper">
-          <div className="Header-Wrapper-Logo">
-            <NavLink to={`/`}>
-              {scrolled ?
-                <img src={process.env.PUBLIC_URL+'/images/Logo-Black-Text.png'} alt="" />
-                :
-                <img src={process.env.PUBLIC_URL+'/images/Logo-White-Text.png'} alt="" />
-              }
-            </NavLink>
-          </div>
-          <div className="Header-Wrapper-Navigation">
-            {HamburgerStyle == "Hidden" ?
-              <ul color='primary'>
-                <li>
+    <>
+        <div className={`Hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className={`Burger Burger1 ${scrolled ? '' : 'White' }`} />
+            <div className={`Burger Burger1 ${scrolled ? '' : 'White' }`} />
+            <div className={`Burger Burger1 ${scrolled ? '' : 'White' }`} />
+        </div>
+        <div className={`Sidebar ${isOpen ? 'Sidebar-Open' : ''}`}>
+            <ul className='Header-Wrapper-Navigation-Sidebar'>
+                <li onClick={() => setIsOpen(!isOpen)}>
+                  <NavLink to={'/'}>
+                    <img src={process.env.PUBLIC_URL+'/images/Logo-White-Text.png'} height={92} alt="" />
+                  </NavLink>
+                </li>
+                <li onClick={() => setIsOpen(!isOpen)}>
                   <NavLink 
-                  className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} 
+                  className={`Navigation-Link`} 
                   to={`/Services`}>Services</NavLink>
                 </li>
-                <li>
-                  <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Projects`}>Projects</NavLink>
+                <li onClick={() => setIsOpen(!isOpen)}>
+                  <NavLink className={`Navigation-Link`} to={`/Projects`}>Projects</NavLink>
                 </li>
-                <li>
-                  <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Insights`}>Insights</NavLink>
+                <li onClick={() => setIsOpen(!isOpen)}>
+                  <NavLink className={`Navigation-Link`} to={`/Insights`}>Insights</NavLink>
                 </li>
-                <li id='Navigation-Buttons'>
+                <li id='Hamburger-Navigation-Buttons'>
                   {!loggedIn ? (
                   <>
                     <NavLink to={`/Contact`}>
@@ -153,6 +116,7 @@ const Header = () => {
                       <Link to={`/Dashboard`}> 
                         <Button 
                             variant='contained'
+                            onClick={() => setIsOpen(!isOpen)}
                           >
                           Dashboard
                         </Button>
@@ -194,7 +158,8 @@ const Header = () => {
                             <ClickAwayListener onClickAway={handleClose}>
                               <MenuList id="split-button-menu" autoFocusItem>
                                   <MenuItem
-                                  onClick={handleLogOut}
+                                  onClick={() => {handleLogOut(); setIsOpen(!isOpen)}}
+                                  
                                   >
                                     Logout
                                   </MenuItem>
@@ -207,18 +172,10 @@ const Header = () => {
                     </>
                   }
                 </li>
-              </ul>
-              :
-              <>
-                <div className="HamburgerDiv">
-                  <Hamburger loggedIn={loggedIn}></Hamburger>
-                </div>
-              </>
-            }
-          </div>
+            </ul>
         </div>
-      </nav>
-    </header>
+    </>
   );
-};
-export default Header
+}
+
+export default Hamburger;

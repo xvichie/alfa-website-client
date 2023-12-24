@@ -1,0 +1,99 @@
+/* Header.css or your preferred CSS file */
+
+.Hamburger {
+    // display: none;
+    // background-color: b;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .Hamburger .Burger {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transition: transform 0.3s ease;
+  }
+  
+  .Hamburger .Burger:nth-child(1),
+.Hamburger .Burger:nth-child(3) {
+  transform-origin: center;
+  transform: translateY(0) rotate(0);
+}
+
+/* Transformation for the second line of the hamburger icon */
+.Hamburger .Burger:nth-child(2) {
+  opacity: 1;
+}
+
+/* Adjusted transformations for the X sign when the menu is open */
+.Hamburger.open .Burger:nth-child(1) {
+  transform: translateY(0.7rem) rotate(45deg);
+}
+
+.Hamburger.open .Burger:nth-child(2) {
+  opacity: 0;
+}
+
+.Hamburger.open .Burger:nth-child(3) {
+  transform: translateY(-0.7rem) rotate(-45deg);
+}
+  
+@media (max-width: 1100px) {
+    .Hamburger {
+        // background-color: red;
+        display: flex;
+        // position: fixed;
+        // padding-top: 10px;
+        // padding-left: 10px;
+        // z-index: 10000;
+    }
+}
+  
+.White{
+   background-color: white !important;
+}
+
+.Sidebar{
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.Sidebar-Open{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh !important;
+    width: 300px;
+    z-index: 10000;
+    background-color: black !important;
+    opacity: 0.97;
+    background-blend-mode: multiply;
+    transition: transform 0.3s ease;
+}
+.Header-Wrapper-Navigation-Sidebar{
+    // margin:0;
+    padding: 0;
+    align-items: center;
+    width: fit-content;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    a{
+        text-decoration: none !important;
+    }
+    li{
+        margin-left: 0;
+    }
+}
+
+#Hamburger-Navigation-Buttons a{
+  margin-right: 0px !important;
+}

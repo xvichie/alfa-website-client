@@ -38,11 +38,11 @@ function HomeScreen() {
             </Button>
           </div>
         </div>
-        <div className="Home-Button">
+        {/* <div className="Home-Button">
           <a href="">
             <img src={process.env.PUBLIC_URL+'/gifs/scrolldown.gif'} alt="" />
           </a>
-        </div>
+        </div> */}
       </div>
       <div className="Home-Description">
         <div className="Description-Wrapper">

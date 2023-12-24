@@ -3,11 +3,13 @@ import './ProjectsScreen.scss';
 import ServiceCardComponent from '../../components/ServiceCardComponent/ServiceCardComponent';
 import ProjectFacade from './ProjectFacade/ProjectFacade';
 import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 function ProjectsScreen() {
     const [projects,setProjects] = useState([]);
 
     const TempImage = 'https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/projects/5546a652-702b-43ac-8d53-1d6c1da49ab9.PNG';
+
 
     useEffect(() => {
         // setProjects([
@@ -81,6 +83,7 @@ function ProjectsScreen() {
                         {projects ? (
                             projects.map((project, index) => (
                                     <ProjectFacade
+                                    key={index}
                                     project={project} 
                                     />
                             ))

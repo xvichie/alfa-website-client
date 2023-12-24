@@ -17,3 +17,13 @@
         }
     }
 }
+
+
+@media (max-width:550px){
+    .Insights-Posts{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        row-gap: 10px;
+        // margin-bottom: 40px;
+    }
+}

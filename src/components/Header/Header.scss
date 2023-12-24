@@ -51,12 +51,12 @@ header {
     } 
 }
 
-header.scrolled {
+header .scrolled {
     transition: background-color 0.4s ease; 
-    position: fixed;
-    top: 0; /* Position at the top */
+    // position: fixed;
+    // top: 0; /* Position at the top */
     width: 100%; /* Full width */
-    background-color: white; /* Change background color when scrolled */
+    // background-color: white; /* Change background color when scrolled */
     z-index: 1000; /* Set a z-index to make sure it's above other elements */
     /* Other styles for the scrolled state */
     color: white;
@@ -66,6 +66,10 @@ header.scrolled {
 }
 .Navigation-Link.scrolled{
     color: black !important;
+}
+
+.HeaderScrolled{
+    background-color: white;
 }
 
 /* Styles for the button */
@@ -123,3 +127,25 @@ header.scrolled {
 //     transform: translateX(-50%);
 //     background: #f27cac;
 // }
+
+.HamburgerDiv{
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+@media (max-width:500px) {
+    .Header-Wrapper-Logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img{
+            height: 40px !important;
+        }
+    }
+    .HamburgerDiv{
+        height: 40px !important;
+    }
+}

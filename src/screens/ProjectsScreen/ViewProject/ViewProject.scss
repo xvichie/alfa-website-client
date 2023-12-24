@@ -1,0 +1,65 @@
+.ViewProject{
+    .ViewProject-Top{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ViewProject-Top-Wrapper{
+            width: 70%;
+            .Top-Labels{
+                h1{
+                    font-size: 64px;
+                    margin-bottom: 0;
+                    color: white;
+                }
+                h3{
+                    margin-top: 0;
+                    font-size: 36px;
+                    color: white;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+    .ViewProject-Main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ViewProject-Wrapper{
+            width: 70%;
+            .ViewProject-Details{
+                width: 100%;
+                height: 400px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .Details-Left{
+
+                }
+                .Details-Right{
+                    width: 200px;
+                }
+            }
+            .ViewProject-Insight{
+                height: 200px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .ViewProject-Tags{
+                div{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    .Tag{
+                        align-items: center;
+                        // width: 100px;
+                        // justify-content: space-between;
+                        h4{
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

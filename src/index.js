@@ -27,14 +27,22 @@ import AddInsight from './screens/DashboardScreen/Insights/AddInsight/AddInsight
 import EditInsight from './screens/DashboardScreen/Insights/EditInsight/EditInsight';
 import AddReview from './screens/DashboardScreen/Reviews/AddReview/AddReview';
 import EditReview from './screens/DashboardScreen/Reviews/EditReview/EditReview';
+import ViewProject from './screens/ProjectsScreen/ViewProject/ViewProject';
+import ViewInsight from './screens/InsightsScreen/ViewInsight/ViewInsight';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App />}>
     <Route index={true} path='/' element={<HomeScreen />}></Route>
     <Route path='/services' element={<ServicesScreen />}></Route>
-    <Route path='/projects' element={<ProjectsScreen />}></Route>
-    <Route path='/insights' element={<InsightsScreen />}></Route>
+    <Route path='projects' >
+      <Route index={true} element={<ProjectsScreen />} />
+      <Route path=':ProjectId' element={<ViewProject />} />
+    </Route>
+    <Route path='insights'>
+      <Route index={true} element={<InsightsScreen />} />
+      <Route path=':InsightId' element={<ViewInsight />} />
+    </Route>
     <Route path='/login' element={<LoginScreen />}></Route>
     <Route path='/register' element={<RegisterScreen />}></Route>
     <Route path='dashboard'>
