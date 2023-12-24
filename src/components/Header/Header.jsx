@@ -11,7 +11,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { ButtonGroup } from 'react-bootstrap';
-import { logoutUser } from '../../redux/slices/authSlice';
+import { logoutUser, setIsLoggedIn } from '../../redux/slices/authSlice';
 import Hamburger from './Hamburger/Hamburger';
 
 const Header = () => {
@@ -32,6 +32,7 @@ const Header = () => {
 
     if(!token){
       setLoggedIn(false);
+      dispatch(setIsLoggedIn(false));
     }
     else{
 
@@ -41,8 +42,10 @@ const Header = () => {
 
       if ((!isTokenExpired)) {
         setLoggedIn(true);
+        dispatch(setIsLoggedIn(true));
       } else {
         setLoggedIn(false);
+        dispatch(setIsLoggedIn(false));
         console.log("false");
       }
     }

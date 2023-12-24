@@ -57,7 +57,7 @@ function ProjectsScreen() {
             <div className="Main-Wrapper">
                 <div className="Main-Left">
                     <div className='Left-Labels'>
-                        <h1>Just Have a<br></br>Look</h1>
+                        <h1>Just Have<br></br>A Look</h1>
                         <h4>Let Our Work Do The Talking</h4>
                     </div>
                 </div>

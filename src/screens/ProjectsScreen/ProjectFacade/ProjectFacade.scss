@@ -38,3 +38,22 @@
     }
   }
   
+
+@media (max-width:650px){
+  .ProjectFacade{
+    height: 250px !important;
+  }
+  .Facade-Hidden {
+    top: 40% !important;
+    left: 35% !important;
+  }
+}
+
+@media (max-width:500px){
+  .ProjectFacade{
+    height: 200px !important;
+  }
+  .Facade-Hidden {
+    left: 30% !important;
+  }
+}

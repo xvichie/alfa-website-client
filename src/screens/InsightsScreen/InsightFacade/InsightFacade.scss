@@ -34,3 +34,24 @@
     }
   }
   
+@media (max-width:800px) {
+    .Facade-Hidden {
+      left: 28% !important;
+    }
+}
+
+@media (max-width:650px) {
+  .Facade-Hidden {
+    left: 28% !important;
+    top: 45% !important;
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width:600px) {
+  .Facade-Hidden {
+    left: 33% !important;
+    top: 45% !important;
+    font-size: 28px !important;
+  }
+}

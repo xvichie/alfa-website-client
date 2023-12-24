@@ -50,3 +50,69 @@ $Tag-Color: #462e75;
     background-color: $Hover-Background-Color;
     cursor: pointer;
 }
+
+@media (max-width: 450px) {
+    .ServiceFacade{
+        height: 275px;
+    }
+    .ServiceFacade-Top{
+        height: 40px !important;
+        width: 40px !important;
+    }
+    .ServiceFacade-Title{
+        font-size: 20px !important;
+        h3,h4{
+            margin-top: 15px !important;
+            margin-bottom: 5px;
+
+        }
+    }
+    .ServiceFacade-Description{
+        // margin-bottom: 5px;
+        p{
+            font-size: 16px !important;
+        }
+    }
+    .ServiceFacade-Tags{
+        h4{
+            font-size: 14px !important;
+            color: $Tag-Color;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .ServiceFacade{
+        height: 275px;
+    }
+    .ServiceFacade-Top{
+        height: 36px !important;
+        width: 36px !important;
+    }
+    .ServiceFacade-Title{
+        font-size: 18px !important;
+        h3,h4{
+            margin-top: 30px !important;
+            margin-bottom: 5px;
+
+        }
+    }
+    .ServiceFacade-Description{
+        // margin-bottom: 5px;
+        p{
+            font-size: 16px !important;
+        }
+    }
+    .ServiceFacade-Tags{
+        h4{
+            font-size: 14px !important;
+            color: $Tag-Color;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    }
+}

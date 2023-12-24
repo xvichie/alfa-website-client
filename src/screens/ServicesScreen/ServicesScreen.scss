@@ -67,3 +67,182 @@
         margin-bottom: 50px;
     }
 }
+
+
+@media (max-width:1300px){
+        .Main-Left{
+            h1{
+                font-size: 64px !important;
+                line-height: 64px !important;
+                margin-bottom: 0;
+            }
+            h4{
+                color: greenyellow;
+                font-size: 16px;
+            }
+        }
+        .Main-Right{
+            width: 450px !important;
+            h2{
+                color: white;
+                font-weight: 400;
+                font-size: 20px !important;
+            }
+        }
+}
+
+@media (max-width:1000px){
+    .Main-Left{
+        h1{
+            font-size: 56px !important;
+            line-height: 56px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 12px !important;
+        }
+    }
+    .Main-Right{
+        width: 400px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 20px !important;
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .Main-Left{
+        h1{
+            font-size: 48px !important;
+            line-height: 48px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 10px !important;
+        }
+    }
+    .Main-Right{
+        width: 300px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 16px !important;
+        }
+    }
+    .Services-List{
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+}
+
+@media (max-width: 600px){
+    .Main-Left{
+        h1{
+            font-size: 40px !important;
+            line-height: 40px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 10px !important;
+        }
+    }
+    .Main-Right{
+        width: 200px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 10px !important;
+        }
+    }
+    .Services-Main{
+        height: 350px !important;
+    }
+    .Services-List{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        row-gap: 20px !important;
+        column-gap: 15px;
+    }
+}
+
+@media (max-width: 550px){
+    .Main-Left{
+        h1{
+            font-size: 36px !important;
+            line-height: 32px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 10px !important;
+        }
+    }
+    .Main-Right{
+        width: 170px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 8px !important;
+        }
+    }
+    .Services-Main{
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 500px){
+    .Main-Left{
+        h1{
+            font-size: 36px !important;
+            line-height: 32px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 10px !important;
+        }
+    }
+    .Main-Right{
+        width: 150px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 10px !important;
+        }
+    }
+    .Services-Main{
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 500px){
+    .Main-Left{
+        h1{
+            font-size: 32px !important;
+            line-height: 30px !important;
+            margin-bottom: 0;
+        }
+        h4{
+            color: greenyellow;
+            font-size: 10px !important;
+        }
+    }
+    .Main-Right{
+        width: 110px !important;
+        h2{
+            color: white;
+            font-weight: 400;
+            font-size: 8px !important;
+        }
+    }
+    .Services-Main{
+        height: 225px !important;
+    }
+}

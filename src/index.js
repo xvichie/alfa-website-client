@@ -30,6 +30,10 @@ import EditReview from './screens/DashboardScreen/Reviews/EditReview/EditReview'
 import ViewProject from './screens/ProjectsScreen/ViewProject/ViewProject';
 import ViewInsight from './screens/InsightsScreen/ViewInsight/ViewInsight';
 
+const AppRouter = () => {
+
+}
+
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App />}>
