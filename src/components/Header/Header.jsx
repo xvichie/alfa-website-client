@@ -11,13 +11,15 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { ButtonGroup } from 'react-bootstrap';
-import { logoutUser, setIsLoggedIn } from '../../redux/slices/authSlice';
+import { logoutUser, setIsAdmin, setIsLoggedIn } from '../../redux/slices/authSlice';
 import Hamburger from './Hamburger/Hamburger';
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const [loggedIn,setLoggedIn] = useState(false);
+
 
   const [HamburgerStyle,SetHamburgerStyle] = useState("Hidden");
 
@@ -25,8 +27,27 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const token = useSelector(state => state.auth.token);
+  const isAdmin = useSelector(state => state.auth.isAdmin);
+
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token'));
+
+    const SetAdmin = async () => {
+      try{
+        console.log(token.accessToken);
+          const response = await createAPIEndpoint(ENDPOINTS.admin,token.accessToken).getWithToken();
+
+          if(response.status === 200){
+              console.log()
+              dispatch(setIsAdmin(true));
+          }else{
+            dispatch(setIsAdmin(false));
+          }
+      }
+      catch{
+        console.error("Not Admin Error!");
+      }
+  };
 
     console.log(token);
 
@@ -43,12 +64,16 @@ const Header = () => {
       if ((!isTokenExpired)) {
         setLoggedIn(true);
         dispatch(setIsLoggedIn(true));
+
+        SetAdmin();
+
       } else {
         setLoggedIn(false);
         dispatch(setIsLoggedIn(false));
         console.log("false");
       }
     }
+
   }, []);
 
 
@@ -153,6 +178,7 @@ const Header = () => {
                   ) :
                     <>
                     <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+                      {isAdmin ? 
                       <Link to={`/Dashboard`}> 
                         <Button 
                             variant='contained'
@@ -160,6 +186,9 @@ const Header = () => {
                           Dashboard
                         </Button>
                       </Link>
+                      :
+                      ""
+                      }
                       <Button
                         size="small"
                         aria-controls={open ? 'split-button-menu' : undefined}

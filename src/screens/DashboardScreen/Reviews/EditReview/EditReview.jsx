@@ -53,6 +53,7 @@ function EditReview() {
         event.preventDefault()
         
         const data = {
+            reviewId: ReviewId,
             body: Body,
             personName: PersonName,
             workplace: Workplace,

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import ProjectPreview from './Projects/ProjectPreview/ProjectPreview';
 import InsightPreview from './Insights/InsightPreview/InsightPreview';
 import ReviewPreview from './Reviews/ReviewPreview/ReviewPreview';
+import { useSelector } from 'react-redux';
 
 function DashboardScreen() {
     const [Insights,SetInsights] = useState(null);
@@ -14,11 +15,21 @@ function DashboardScreen() {
     const [Services,SetServices] = useState(null);
     const [Reviews,SetReviews] = useState(null);
 
-
-
     const navigate = useNavigate();
 
+    const isAuthenticated = useSelector(state => state.auth.isLoggedIn);
+    const isAdmin = useSelector(state => state.auth.isAdmin);
+
+
     useEffect(() => {
+
+        if(!isAuthenticated){
+            navigate('/login');
+        }
+
+        if(!isAdmin){
+            navigate('/');
+        }
 
         const FetchData = async () => {
             try {
@@ -55,9 +66,8 @@ function DashboardScreen() {
         }
 
         FetchData().catch(console.error);
-
     },[]);
-    console.log(Reviews);
+    // console.log(Reviews);
   return (
     <div className='DashboardScreen'>
             <div className="Dashboard-Main">

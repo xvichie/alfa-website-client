@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ENDPOINTS, createAPIEndpoint } from '../../../../api/api';
 import { Button, TextField } from '@mui/material';
 import UploadWidget from '../../../../components/UploadWidget/UploadWidget';
+import { useSelector } from 'react-redux';
 
 function EditService() {
 
@@ -18,7 +19,14 @@ function EditService() {
 
     const navigate = useNavigate();
 
+    const isAdmin = useSelector(state => state.auth.isAdmin);
+
     useEffect(() => {
+
+        if(!isAdmin){
+            navigate('/');
+        }
+
         const fetchService = async () => {
             try{
                 const response = await createAPIEndpoint(ENDPOINTS.services).getById(ServiceId);
