@@ -27,6 +27,7 @@
                     font-size: 76px;
                     line-height: 80px;
                     margin-bottom: 0;
+                    font-family: 'Anton', sans-serif;
                 }
                 h4{
                     color: greenyellow;
@@ -55,6 +56,8 @@
                 justify-content: center;
                 h1{
                     font-size: 48px;
+                    margin: 30px 0;
+                    font-weight: bold;
                 }
             }
             .Services-List{
@@ -118,7 +121,7 @@
         h1{
             font-size: 48px !important;
             line-height: 48px !important;
-            margin-bottom: 0;
+            margin-bottom: 10px !important;
         }
         h4{
             color: greenyellow;
@@ -169,6 +172,12 @@
         grid-template-columns: 1fr !important;
         row-gap: 20px !important;
         column-gap: 15px;
+    }
+    .Services-Label{
+        h1{
+            font-size: 32px !important;
+            margin: 25px 0 !important;
+        }
     }
 }
 

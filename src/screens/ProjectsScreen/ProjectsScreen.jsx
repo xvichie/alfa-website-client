@@ -12,33 +12,6 @@ function ProjectsScreen() {
 
 
     useEffect(() => {
-        // setProjects([
-        //     {
-        //         title:"Matka.ge",
-        //         shortDescription:"magari tvini mogvetyna",
-        //         mainDescription:"cvetshi tvini mogvetyna",
-        //         description:"kide tvini moityna",
-        //         sector:"education",
-        //         year: 2023,
-        //         challenge:"stayin alive",
-        //         whatWeDid: "deda movityanit",
-        //         images: [TempImage],
-        //         tags: ['React','Node','auth0']
-        //     },
-        //     {
-        //         title:"Matka.ge",
-        //         shortDescription:"magari tvini mogvetyna",
-        //         mainDescription:"cvetshi tvini mogvetyna",
-        //         description:"kide tvini moityna",
-        //         sector:"education",
-        //         year: 2023,
-        //         challenge:"stayin alive",
-        //         whatWeDid: "deda movityanit",
-        //         images: [TempImage],
-        //         tags: ['React','Node','auth0']
-        //     }]
-        // )
-
         const fetchProjects = async () => {
             try{
                 const response = await createAPIEndpoint(ENDPOINTS.projects).get();
@@ -75,9 +48,6 @@ function ProjectsScreen() {
                     <h1>
                         Our Projects
                     </h1>
-                    <h3>
-                        Have A Look
-                    </h3>
                 </div>
                 <div className="Projects-List">
                         {projects ? (

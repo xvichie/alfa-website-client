@@ -33,7 +33,12 @@ function HomeScreen() {
             </h2>
           </div>
           <div className="HomeLabels-ContactUs">
-            <Button variant='outlined' className='fill-button-main'>
+            <Button variant='outlined' className='fill-button-main' 
+            onClick={() => {
+              const element = document.getElementById(`ContactUs`);
+              if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+              }}}>
                 Contact Us
             </Button>
           </div>
@@ -43,29 +48,6 @@ function HomeScreen() {
             <img src={process.env.PUBLIC_URL+'/gifs/scrolldown.gif'} alt="" />
           </a>
         </div> */}
-      </div>
-      <div className="Home-Description">
-        <div className="Description-Wrapper">
-          <div className="Wrapper-Top">
-            <div className="Top-SubTitle">
-              <BoltIcon height={20}></BoltIcon>We Know What You Need
-            </div>
-            <div className="Top-Title">
-              Software Development
-              <br></br>
-              <span className='Title-Special'>For Your Needs</span>
-              <br />
-              <br />
-              Modern Solutions
-              <br />
-              <span className='Title-Special'>For Your Problems</span>
-            </div>
-          </div>
-          <div className="Wrapper-Bottom">
-            Our Belief Is That Education Has Never Been More Important Than Today And With Modern Technologies, It Has Given Us A Great Chance To
-            Give The Education To Everybody That Deserves It.
-          </div>
-        </div>
       </div>
       <div className="Home-Services">
         <div className="Services-Wrapper">

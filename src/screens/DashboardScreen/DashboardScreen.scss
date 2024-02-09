@@ -1,5 +1,10 @@
 .DashboardScreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .Dashboard-Main{
+        width: 100%;
         background-image: url("https://sweeftdigital.com/assets/updatedDesignDec21/heros/services-hero.svg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -24,6 +29,7 @@
                     font-size: 76px;
                     line-height: 80px;
                     margin-bottom: 0;
+                    font-family: 'Anton', sans-serif;
                 }
                 h4{
                     color: greenyellow;
@@ -40,29 +46,134 @@
         }
     }
     .Dashboard-Wrapper{
+        width: 90%;
+        .Dashboard-Label{
+            h1{
+                text-align: center;
+                font-weight: bold;
+                margin: 20px 0;
+            }
+        }
         .Dashboard-Services{
             .Services-Previews{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                row-gap: 10px;
             }
         }
         .Dashboard-Projects{
             .Projects-Previews{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                row-gap: 10px;
             }
         }
         .Dashboard-Insights{
             .Insights-Previews{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                row-gap: 10px;
             }
         }
         .Dashboard-Reviews{
             .Reviews-Previews{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                row-gap: 10px;
             }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .Dashboard-Services{
+        .Services-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Projects{
+        .Projects-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Insights{
+        .Insights-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Reviews{
+        .Reviews-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .Dashboard-Services{
+        .Services-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Projects{
+        .Projects-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Insights{
+        .Insights-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Reviews{
+        .Reviews-Previews{
+            display: grid;
+            grid-template-columns: 1fr 1fr !important;
+            row-gap: 10px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .Dashboard-Services{
+        .Services-Previews{
+            display: grid;
+            grid-template-columns: 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Projects{
+        .Projects-Previews{
+            display: grid;
+            grid-template-columns: 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Insights{
+        .Insights-Previews{
+            display: grid;
+            grid-template-columns: 1fr !important;
+            row-gap: 10px;
+        }
+    }
+    .Dashboard-Reviews{
+        .Reviews-Previews{
+            display: grid;
+            grid-template-columns: 1fr !important;
+            row-gap: 10px;
         }
     }
 }

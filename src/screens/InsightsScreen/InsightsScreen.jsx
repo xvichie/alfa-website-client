@@ -9,32 +9,6 @@ function InsightsScreen() {
     const TempImage = 'https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/blogs/1523c91d-e5bf-4392-81ed-d58aa5e4f3f1.png';
 
     useEffect(() => {
-        // setInsights([
-        //     {
-        //         title:"Matka.ge",
-        //         shortDescription:"magari tvini mogvetyna",
-        //         mainDescription:"cvetshi tvini mogvetyna",
-        //         description:"kide tvini moityna",
-        //         sector:"education",
-        //         year: 2023,
-        //         challenge:"stayin alive",
-        //         whatWeDid: "deda movityanit",
-        //         images: [TempImage],
-        //         tags: ['React','Node','auth0']
-        //     },
-        //     {
-        //         title:"Matka.ge",
-        //         shortDescription:"magari tvini mogvetyna",
-        //         mainDescription:"cvetshi tvini mogvetyna",
-        //         description:"kide tvini moityna",
-        //         sector:"education",
-        //         year: 2023,
-        //         challenge:"stayin alive",
-        //         whatWeDid: "deda movityanit",
-        //         images: [TempImage],
-        //         tags: ['React','Node','auth0']
-        //     }]
-        // )
         const FetchInsights = async () => {
             try{
                 const response = await createAPIEndpoint(ENDPOINTS.insights).get();
@@ -76,9 +50,9 @@ function InsightsScreen() {
                     <h1>
                         Our Insights
                     </h1>
-                    <h3>
+                    {/* <h3>
                         Have A Look
-                    </h3>
+                    </h3> */}
                 </div>
                 <div className="Insights-List">
                         {Insights ? (

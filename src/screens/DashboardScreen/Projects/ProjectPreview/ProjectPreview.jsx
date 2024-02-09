@@ -36,7 +36,7 @@ function ProjectPreview({Project}) {
                 <h3>{Project.title}</h3>
             </div>
             <div className="ProjectPreview-Description">
-                <p>{Project.description}</p>
+                <p>{Project.shortDescription}</p>
             </div>
             <div className="ProjectPreview-Actions">
                 <ButtonGroup>

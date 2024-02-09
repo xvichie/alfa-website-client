@@ -1,4 +1,5 @@
 $Background-Color : #170738;
+$Main-Cyan: #12deda;
 
 .Footer{
     height: 100px;
@@ -47,6 +48,10 @@ $Background-Color : #170738;
                             width: 32px;
                             height: 32px;
                             color: white !important;
+                            transition: all 0.3s ease;
+                        }
+                        .Socials-Icon:hover{
+                            color: $Main-Cyan !important;
                         }
                     }
                 }

@@ -10,6 +10,7 @@ $text-purple : #170738;
         width: 80%;
         .ContactUs-Left{
             color: white;
+            
                 .Left-Top{
                     display: flex;
                     justify-content: space-between;
@@ -21,11 +22,22 @@ $text-purple : #170738;
 
                         .TextField{
                             background-color: white;
-                            border-radius: 15px;
-                            margin-right: 5px;
+                            border-radius: 5px;
+                            margin: 5px 5px 5px 0;
                         }
                     }
                 }
         }
+    }
+}
+
+@media (max-width: 700px) {
+    .Top-NameEmail{
+        flex-direction: column !important;
+    }
+    .TextField{
+        background-color: white;
+        border-radius: 15px;
+        margin-right: 5px;
     }
 }

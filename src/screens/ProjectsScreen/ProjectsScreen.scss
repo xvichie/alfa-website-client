@@ -1,7 +1,4 @@
 .ProjectsScreen{
-    // margin: 0;
-    // padding: 0;
-    // height: 400px;
     .Projects-Main{
         background-image: url("https://sweeftdigital.com/assets/updatedDesignDec21/heros/services-hero.svg");
         -webkit-background-size: cover;
@@ -27,6 +24,8 @@
                     font-size: 76px;
                     line-height: 80px;
                     margin-bottom: 0;
+                    font-family: 'Anton', sans-serif;
+
                 }
                 h4{
                     color: greenyellow;
@@ -51,18 +50,19 @@
             display: flex;
             flex-direction: column;
             .Projects-Label{
-                margin-top: 20px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 h1{
                     font-size: 36px;
                     margin-bottom: 0;
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 20px 0;
                 }
                 h3{
                     margin-top: 10px;
                 }
-                margin-bottom: 20px;
             }
             .Projects-List{
                 display: grid;

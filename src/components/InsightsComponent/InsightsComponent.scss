@@ -9,6 +9,10 @@
         width: 90%;
         .Insights-Label{
             text-align: center;
+            h1{
+                font-weight: bold;
+                margin: 30px 0;
+            }
         }
         .Insights-Posts{
             display: grid;

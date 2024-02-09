@@ -2,8 +2,8 @@
     margin:0;
     padding: 0;
     .ReviewComponent-Paper{
-        height: 320px;
-        width: 1000px;
+        height: 375px;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -11,10 +11,11 @@
         border-radius: 20px;
         .Paper-Wrapper{
             width: 90%;
+            height: 85%;
             display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
             .Paper-Left{
                 img{
                     height: 256px;
@@ -22,34 +23,197 @@
                 }
             }
             .Paper-Middle{
-                padding-bottom: 220px;
+                height: 100% !important;
                 .Middle-Quotes{
                     height: 64px !important;
                     width: 64px !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
                 }
             }
             .Paper-Right{
                 text-align: left;
-                display: flex !important;
+                // align-items: center;
+                height: 90% !important;
+                display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                // grid-template-rows: 1fr 1fr;
+                justify-content: space-between;
                 .Right-Top{
-                    font-size: 20px;
+                    font-size: 18px;
                     // position: absolute;
                     top: 0;
-                    padding-bottom: 25px;
+                    // padding-bottom: 25px;
                 }
                 .Right-Bottom{
                     h2,h3,h5{
                         margin-top:10px;
                         margin-bottom: 10px;
                     }
+                    h2{
+                        font-size: 20px;
+                        margin: 0;
+                        font-weight: bold;
+                    }
+                    h3{
+                        font-size: 16px;
+                        margin-top: 5px;
+                    }
                     h5{
+                        font-size: 12px;
                         align-items: center !important;
                     }
                 }
     
             }       
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .ReviewComponent{
+        .ReviewComponent-Paper{
+            height: 850px !important;
+            width: fit-content !important;
+            flex-direction: row !important;
+            .Paper-Wrapper{
+                flex-direction: column !important;
+                .Paper-Left{
+                    img{
+                        height: 212px !important;
+                        width: 212px !important;
+                    }
+                }
+                .Paper-Middle{
+                    padding-bottom: 0px !important;
+                    .Middle-Quotes{
+                        height: 56px !important;
+                        width: 56px !important;
+                    }
+                }
+                .Paper-Right{
+                    text-align: left;
+                    display: flex !important;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .Right-Top{
+                        font-size: 16px !important;
+                        // position: absolute;
+                        top: 0;
+                        padding-bottom: 20px !important;
+                    }
+                    .Right-Bottom{
+                        h2,h3,h5{
+                            margin-top:10px;
+                            margin-bottom: 10px;
+                        }
+                        h5{
+                            align-items: center !important;
+                        }
+                    }
+        
+                }       
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .ReviewComponent{
+        .ReviewComponent-Paper{
+            height: 750px !important;
+
+            width: fit-content !important;
+            flex-direction: row !important;
+            .Paper-Wrapper{
+                flex-direction: column !important;
+                .Paper-Left{
+                    img{
+                        height: 188px !important;
+                        width: 188px !important;
+                    }
+                }
+                .Paper-Middle{
+                    padding-bottom: 0px !important;
+                    .Middle-Quotes{
+                        height: 48px !important;
+                        width: 48px !important;
+                    }
+                }
+                .Paper-Right{
+                    text-align: left;
+                    display: flex !important;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .Right-Top{
+                        font-size: 14px !important;
+                        // position: absolute;
+                        padding-bottom: 15px !important;
+                    }
+                    .Right-Bottom{
+                        h2{
+                            font-size: 24px !important;
+                        }
+                        h3{
+                            font-size: 18px !important;
+                        }
+                        h5{
+                            font-size: 12px !important;
+                        }
+                    }
+        
+                }       
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .ReviewComponent{
+        .ReviewComponent-Paper{
+            height: 750px !important;
+
+            width: fit-content !important;
+            flex-direction: row !important;
+            .Paper-Wrapper{
+                flex-direction: column !important;
+                .Paper-Left{
+                    img{
+                        height: 156px !important;
+                        width: 156px !important;
+                    }
+                }
+                .Paper-Middle{
+                    padding-bottom: 0px !important;
+                    .Middle-Quotes{
+                        height: 44px !important;
+                        width: 44px !important;
+                    }
+                }
+                .Paper-Right{
+                    text-align: left;
+                    display: flex !important;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .Right-Top{
+                        font-size: 14px !important;
+                        // position: absolute;
+                        padding-bottom: 15px !important;
+                    }
+                    .Right-Bottom{
+                        h2{
+                            font-size: 20px !important;
+                        }
+                        h3{
+                            font-size: 16px !important;
+                        }
+                        h5{
+                            font-size: 12px !important;
+                        }
+                    }
+        
+                }       
+            }
         }
     }
 }

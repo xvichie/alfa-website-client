@@ -9,7 +9,7 @@ $Text-Color: #170738;
         color: $Text-Color;
         display: flex;
         justify-content: center;
-        height: 250px;
+        height: 275px;
         align-items: center;
         border-radius: 20px;
         width: 98%;
@@ -19,6 +19,7 @@ $Text-Color: #170738;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            height: 90%;
             .ProjectPreview-Top{
                 height: 32px;
                 width: 32px;

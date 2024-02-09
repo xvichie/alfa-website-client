@@ -12,25 +12,15 @@ $Tag-Color: #462e75;
     height: 310px;
     align-items: center;
     border-radius: 20px;
-    // width: 95%;
     .ServiceFacade-Wrapper{
         width: 80%;
-        
-        // background-color: red;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        max-height: 85%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         .ServiceFacade-Top{
-            height: 48px;
-            width: 48px;
         }
         .ServiceFacade-Title{
             font-size: 24px;
-            h3,h4{
-                margin-top: 20px;
-                margin-bottom: 5px;
-
-            }
         }
         .ServiceFacade-Description{
             // margin-bottom: 5px;
@@ -38,9 +28,8 @@ $Tag-Color: #462e75;
         .ServiceFacade-Tags{
             h4{
                 color: $Tag-Color;
-                margin-top: 10px;
-                margin-bottom: 10px;
                 font-weight: bold;
+                font-size: 16px;
             }
         }
     }
@@ -53,33 +42,27 @@ $Tag-Color: #462e75;
 
 @media (max-width: 450px) {
     .ServiceFacade{
-        height: 275px;
-    }
-    .ServiceFacade-Top{
-        height: 40px !important;
-        width: 40px !important;
-    }
-    .ServiceFacade-Title{
-        font-size: 20px !important;
-        h3,h4{
-            margin-top: 15px !important;
-            margin-bottom: 5px;
-
-        }
-    }
-    .ServiceFacade-Description{
-        // margin-bottom: 5px;
-        p{
-            font-size: 16px !important;
-        }
-    }
-    .ServiceFacade-Tags{
-        h4{
-            font-size: 14px !important;
-            color: $Tag-Color;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-weight: bold;
+        height: 330px !important;
+        .ServiceFacade-Wrapper{
+            width: 85% !important;
+            max-height: 80% !important;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            .ServiceFacade-Top{
+            }
+            .ServiceFacade-Title{
+                font-size: 24px;
+            }
+            .ServiceFacade-Description{
+                // margin-bottom: 5px;
+            }
+            .ServiceFacade-Tags{
+                h4{
+                    color: $Tag-Color;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
         }
     }
 }
@@ -88,10 +71,7 @@ $Tag-Color: #462e75;
     .ServiceFacade{
         height: 275px;
     }
-    .ServiceFacade-Top{
-        height: 36px !important;
-        width: 36px !important;
-    }
+    
     .ServiceFacade-Title{
         font-size: 18px !important;
         h3,h4{

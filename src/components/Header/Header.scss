@@ -1,92 +1,70 @@
-header {
-    margin:0;
-    padding:0;
-    /* Your default header styles */
-    background-color: transparent;
-    position: fixed;
-    width: 100%;
-    transition: background-color 0.4s ease;
-    display: flex;
-    justify-content: center;
-    height: 85px;
+$Main-Cyan: #12deda;
+
+header{
+    // background-color: transparent !important;
+    // position: fixed !important;
     z-index: 1;
-    nav{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .Header-Wrapper{
+    display: flex !important;
+    justify-content: center !important;
+    .navbar{
+        width: 100%;
+        background-color: transparent !important;
+        .container{
             display: flex;
-            justify-content: space-around;
-            .Header-Wrapper-Logo {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                img{
-                    height: 60px;
-                }
-            }
-            .Header-Wrapper-Navigation{
-                width: 45%;
-                #Navigation-Buttons a{
-                    margin-right: 15px;
-                }
-                .Navigation-Link{
-                    color: white;
-                    font-weight: bold;
-                }
-            } 
-            .Header-Wrapper-Navigation ul{
-                align-items: center;
-                align-items: center;
-                width: 100%;
-                list-style-type: none;
-                display: flex;
-                justify-content: space-around;
-                a{
-                    text-decoration: none !important;
-                }
+            justify-content: space-between !important;
+        }
+        .Navbar-Brand{
+            img{
+                height: 4rem;
             }
         }
-    } 
-}
-
-header .scrolled {
-    transition: background-color 0.4s ease; 
-    // position: fixed;
-    // top: 0; /* Position at the top */
-    width: 100%; /* Full width */
-    // background-color: white; /* Change background color when scrolled */
-    z-index: 1000; /* Set a z-index to make sure it's above other elements */
-    /* Other styles for the scrolled state */
-    color: white;
-    .Navigation-Link{
-        color: black;
+        .Nav-Links{
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            margin-right: 20px;
+        }
+        .navbar-toggler{
+            background-color: white;
+            // color: white;
+        }
+        .offcanvas-body{
+            align-items: center;
+            height: 100%;
+            
+        }
+        .Navigation-Link{
+            text-decoration: none !important;
+            color: white;
+            font-weight: bold;
+            transition: color 0.1s ease;
+        }
+        .scrolled{
+            color: black;
+        }
+        .nav-link{
+            height: fit-content;
+            padding: 0;
+        }
+        .nav-link:hover{
+            .Navigation-Link{
+                color: $Main-Cyan;
+            }
+        }
     }
 }
-.Navigation-Link.scrolled{
-    color: black !important;
+.Header{
+    transition: all 0.3s ease;
+}
+header .HeaderScrolled{
+    background-color: white !important;
 }
 
-.HeaderScrolled{
-    background-color: white;
+.OffCanvas-Img{
+    height: 4rem;
 }
 
-/* Styles for the button */
-.fill-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Pseudo-element for the fill effect */
-  .fill-button::before {
+.fill-button::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -105,47 +83,22 @@ header .scrolled {
   .fill-button:hover::before {
     opacity: 1; /* Make the pseudo-element fully visible */
     transform: scaleY(1);
-}
-.fill-button:hover{
-    color: beige !important;
-}
+  }
+  .fill-button:hover{
+    color: #45367c !important;
+  }
 
-
-
-.active{
-    color: none !important;
-    -webkit-text-stroke: 1px #12deda !important;
-}
-// .active::after {
-//     content: "";
-//     position: absolute;
-//     width: 4px;
-//     height: 4px;
-//     border-radius: 50%;
-//     bottom: -1rem;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     background: #f27cac;
-// }
-
-.HamburgerDiv{
-    height: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-
-@media (max-width:500px) {
-    .Header-Wrapper-Logo {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        img{
-            height: 40px !important;
+@media (max-width: 992px) {
+    .nav-link{
+        height: 60px !important;
+        margin: 10px 0 !important;
+        .Navigation-Link{
+            text-decoration: none;
+            color: #170738;
+            font-weight: bold;
+            transition: color 0.1s ease;
+            height: 60px !important;
+            font-size: 20px !important;
         }
-    }
-    .HamburgerDiv{
-        height: 40px !important;
     }
 }

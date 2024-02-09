@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './LoginScreen.scss';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
@@ -14,10 +14,19 @@ function LoginScreen() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        console.log(isLoggedIn);
+        if(isLoggedIn){
+            navigate('/');
+        }
+    },[isLoggedIn])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -73,8 +82,8 @@ function LoginScreen() {
                             onChange={(e) => setPassword(e.target.value)}
                             margin="normal"
                             required
-                            multiline
                             rows={4}
+                            type='password'
                             />
                             <Button variant="contained" type="submit" sx={{ mt: 2 }}>
                             Log In

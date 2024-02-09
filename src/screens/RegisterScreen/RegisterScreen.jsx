@@ -90,8 +90,8 @@ function RegisterScreen() {
                             onChange={(e) => setPassword(e.target.value)}
                             margin="normal"
                             required
-                            // multiline
                             rows={4}
+                            type='password'
                             />
                              <TextField
                             className='TextField'
@@ -101,7 +101,7 @@ function RegisterScreen() {
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             margin="normal"
                             required
-                            // multiline
+                            type='password'
                             rows={4}
                             />
                             <Button variant="contained" type="submit" sx={{ mt: 2 }}>

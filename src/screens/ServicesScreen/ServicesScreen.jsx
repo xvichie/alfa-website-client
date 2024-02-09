@@ -9,63 +9,6 @@ function ServicesScreen() {
     const [services,setServices] = useState([]);
 
     useEffect(() => {
-        // setServices([
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     },
-        //     {
-        //         title:"Jurnali",
-        //         description:"Agiwyobt Jurnals",
-        //         tags: ["node","react","angular","dedis trak"],
-        //         icon: "https://sweeftdigital.com/assets/backend-development.svg"
-        //     }]
-        // )
-
         const fetchServices = async () => {
             try{
                 const response = await createAPIEndpoint(ENDPOINTS.services).get();

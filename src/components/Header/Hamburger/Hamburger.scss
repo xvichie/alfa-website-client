@@ -60,12 +60,17 @@
 }
 
 .Sidebar{
-    display: none;
-    transition: all 0.3s ease;
+    // display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    transition: all 0.5s step-start;
 }
 
 .Sidebar-Open{
     display: flex;
+    visibility: visible;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -75,7 +80,8 @@
     background-color: black !important;
     opacity: 0.97;
     background-blend-mode: multiply;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+
 }
 .Header-Wrapper-Navigation-Sidebar{
     // margin:0;

@@ -4,7 +4,9 @@
     height: 350px;
     max-height: 350px;
 
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       height: 100%;
       width: 100%;
@@ -14,8 +16,7 @@
     .Facade-Hidden {
       color: white;
       position: absolute;
-      top: 40%;
-      left: 40%;
+      
       font-size: 24px;
       font-weight: bold;
       visibility: hidden;

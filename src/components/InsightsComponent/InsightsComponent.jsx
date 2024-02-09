@@ -1,42 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import './InsightsComponent.scss';
-import InsightComponent from './InsightComponent/InsightComponent';
+import InsightFacade from '../../screens/InsightsScreen/InsightFacade/InsightFacade';
+import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
 
 function InsightsComponent() {
     const [insights,setInsights] = useState();
 
     useEffect(() => {
-        // FETCH REVIEWS FROM BACKEND
-        // Simulating fetched data for the sake of example
-        const fetchedInsights = [
-          {
-            title:"Gela Menabde",
-            description: "Gela Magaria",
-            author:"Gela Lol",
-            images:["https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/blogs/5eae8800-bc70-4850-bd48-3db6037946c1.png"],
-            body: "karoche ra",
-            date: "03/12/2023"
-          },
-          {
-            title:"Gela Menabde",
-            description: "Gela Magaria",
-            author:"Gela Lol",
-            images:["https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/blogs/5eae8800-bc70-4850-bd48-3db6037946c1.png"],
-            body: "karoche ra",
-            date: "03/12/2023"
-          },
-          {
-            title:"Gela Menabde",
-            description: "Gela Magaria",
-            author:"Gela Lol",
-            images:["https://sweeftdigital-com-data.s3.eu-central-1.amazonaws.com/blogs/5eae8800-bc70-4850-bd48-3db6037946c1.png"],
-            body: "karoche ra",
-            date: "03/12/2023"
+        const fetchInsighs = async () => {
+          try{
+            const response = await createAPIEndpoint(ENDPOINTS.insights).get();
+
+            if(response.status === 200){
+              setInsights(response.data.slice(-6));
+            }
           }
-        ];
-    
-        // Set the fetched reviews into state
-        setInsights(fetchedInsights);
+          catch(err){
+            console.error(err);
+          }
+        }
+
+        fetchInsighs()
       }, []);
 
   return (
@@ -48,7 +32,7 @@ function InsightsComponent() {
             <div className="Insights-Posts">
                     {insights ? (
                         insights.map((insight, index) => (
-                            <InsightComponent key={index} insight={insight}></InsightComponent>
+                            <InsightFacade key={index} Insight={insight}></InsightFacade>
                         ))
                     ) : (
                         <div>Loading</div>

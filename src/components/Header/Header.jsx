@@ -7,10 +7,15 @@ import FormControl from '@mui/material/FormControl';
 
 import { slide as Menu } from 'react-burger-menu'
 
+import { LinkContainer } from 'react-router-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { ButtonGroup } from 'react-bootstrap';
+import { ButtonGroup, Container, Nav, NavDropdown, Navbar, Offcanvas, Button as BsButton } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { logoutUser, setIsAdmin, setIsLoggedIn } from '../../redux/slices/authSlice';
 import Hamburger from './Hamburger/Hamburger';
 import { ENDPOINTS, createAPIEndpoint } from '../../api/api';
@@ -134,122 +139,101 @@ const Header = () => {
     };
   }, []);
 
+
   return (
-    <header className={`Header ${scrolled ? 'HeaderScrolled' : ''}`} >
-      <nav>
-        <div className="Header-Wrapper">
-          <div className="Header-Wrapper-Logo">
-            <NavLink to={`/`}>
+    <header>
+      <Navbar expand="lg" collapseOnSelect fixed='top' className={`Header ${scrolled ? 'HeaderScrolled' : ''} bg-body-tertiary`} variant="outline-success">
+        <Container className='Container'>
+          <>
+          <Link to={`/`}>
+            <Navbar.Brand className='Navbar-Brand'>
               {scrolled ?
-                <img src={process.env.PUBLIC_URL+'/images/Logo-Black-Text.png'} alt="" />
+                <img src={process.env.PUBLIC_URL + '/images/Logo-Black-Text.png'} alt="" />
                 :
-                <img src={process.env.PUBLIC_URL+'/images/Logo-White-Text.png'} alt="" />
+                <img src={process.env.PUBLIC_URL + '/images/Logo-White-Text.png'} alt="" />
               }
-            </NavLink>
-          </div>
-          <div className="Header-Wrapper-Navigation">
-            {HamburgerStyle == "Hidden" ?
-              <ul color='primary'>
-                <li>
-                  <NavLink 
-                  className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} 
-                  to={`/Services`}>Services</NavLink>
-                </li>
-                <li>
-                  <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Projects`}>Projects</NavLink>
-                </li>
-                <li>
-                  <NavLink className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`} to={`/Insights`}>Insights</NavLink>
-                </li>
-                <li id='Navigation-Buttons'>
-                  {!loggedIn ? (
-                  <>
-                    <NavLink to={`/Contact`}>
-                      <Button color='primary' variant='outlined' className='fill-button'>
-                          Contact Us
-                      </Button>
-                    </NavLink> 
-                    <Link to={`/Login`}> 
-                      <Button color='primary' variant='contained'>
-                          login
-                      </Button>
-                    </Link>
-                  </>
-                  ) :
-                    <>
-                    <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-                      {isAdmin ? 
-                      <Link to={`/Dashboard`}> 
-                        <Button 
-                            variant='contained'
-                          >
-                          Dashboard
-                        </Button>
-                      </Link>
-                      :
-                      ""
-                      }
-                      <Button
-                        size="small"
-                        aria-controls={open ? 'split-button-menu' : undefined}
-                        aria-expanded={open ? 'true' : undefined}
-                        aria-label="select merge strategy"
-                        aria-haspopup="menu"
-                        onClick={handleToggle}
-                        variant='contained'
-                        style={{height:'100% !important',padding:'6.5px'}}
-                      >
-                        <ArrowDropDownIcon
-                        style={{margin:0,padding:0}}
-                        />
-                      </Button>
-                    </ButtonGroup>
-                    <Popper
-                      sx={{
-                        zIndex: 1,
-                      }}
-                      open={open}
-                      anchorEl={anchorRef.current}
-                      role={undefined}
-                      transition
-                      disablePortal
-                    >
-                      {({ TransitionProps, placement }) => (
-                        <Grow
-                          {...TransitionProps}
-                          style={{
-                            transformOrigin:
-                              placement === 'bottom' ? 'center top' : 'center bottom',
-                          }}
-                        >
-                          <Paper>
-                            <ClickAwayListener onClickAway={handleClose}>
-                              <MenuList id="split-button-menu" autoFocusItem>
-                                  <MenuItem
-                                  onClick={handleLogOut}
-                                  >
-                                    Logout
-                                  </MenuItem>
-                              </MenuList>
-                            </ClickAwayListener>
-                          </Paper>
-                        </Grow>
-                      )}
-                    </Popper>
-                    </>
-                  }
-                </li>
-              </ul>
-              :
+            </Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
+          <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-lg`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
+              placement="start"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
+                      <img className='OffCanvas-Img' src={process.env.PUBLIC_URL + '/images/Logo-Black-Text.png'} alt="" />
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+              <Nav className="justify-content-end flex-grow-1 pe-3 a align-items-center">
               <>
-                <div className="HamburgerDiv">
-                  <Hamburger loggedIn={loggedIn}></Hamburger>
+                <div className='Nav-Links'>
+                  <Nav.Link onClick={() => navigate('/Projects')}>
+                    <NavLink to={'/Projects'} className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`}>
+                          Projects
+                    </NavLink>
+                  </Nav.Link>
+                  <Nav.Link onClick={() => navigate('/Services')}>
+                    <NavLink to={'/Services'} className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`}>
+                        Services
+                    </NavLink>
+                  </Nav.Link>
+                  <Nav.Link onClick={() => navigate('/Insights')}>
+                    <NavLink to={'/Insights'} className={`Navigation-Link ${scrolled ? 'scrolled' : ''}`}>
+                        Insights
+                    </NavLink>
+                  </Nav.Link>
                 </div>
+              {!loggedIn ? (
+                <div className='NavButton'>
+                  <Button color='primary' variant='outlined' className='fill-button' style={{marginRight: '10px'}} onClick={() => {
+              const element = document.getElementById(`ContactUs`);
+              if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+              }}}>
+                    Contact Us
+                  </Button>
+                  <Link to={`/Login`}>
+                    <Button color='primary' variant='contained'>
+                      Login
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                isAdmin ?
+                (
+                  <>
+                    <Dropdown as={ButtonGroup} variant="success">
+                        <BsButton variant="success" onClick={() => navigate('/Dashboard')}>Dashboard</BsButton>
+                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+
+                      <Dropdown.Menu>
+                        <Dropdown.Item onClick={handleLogOut}>Logout</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </>
+                )
+                :
+                (
+                <Dropdown as={ButtonGroup} variant="success">
+                  <BsButton variant="success">Account</BsButton>
+
+                  <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={handleLogOut}>Logout</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+            )
+              )}
               </>
-            }
-          </div>
-        </div>
-      </nav>
+            </Nav>
+              </Offcanvas.Body>
+          </Navbar.Offcanvas>
+          </>
+        </Container>
+      </Navbar>
     </header>
   );
 };

@@ -9,12 +9,13 @@ $Text-Color: #170738;
         color: $Text-Color;
         display: flex;
         justify-content: center;
-        height: 250px;
+        height: 350px;
         align-items: center;
         border-radius: 20px;
         width: 98%;
         .ServicePreview-Wrapper{
             width: 85%;
+            height: 90%;
             // background-color: red;
             display: flex;
             flex-direction: column;

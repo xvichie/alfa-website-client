@@ -1,3 +1,5 @@
+$Text-Color: #2d0e6b;
+
 .ViewProject{
     .ViewProject-Top{
         width: 100%;
@@ -42,9 +44,10 @@
                 }
             }
             .ViewProject-Insight{
-                height: 200px;
+                // height: 200px;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                column-gap: 20px;
             }
             .ViewProject-Tags{
                 div{
@@ -62,4 +65,13 @@
             }
         }
     }
+}
+
+.Title{
+    color: $Text-Color;
+}
+
+.Sub{
+    font-weight: 200;
+    color: #3a3939;
 }
