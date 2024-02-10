@@ -1,0 +1,159 @@
+$Text-Color: #2d0e6b;
+$Text-Color2: #170738;
+
+.ViewInsight{
+    .ViewInsight-TopSpace{
+        height: 80px;
+        background-color: $Text-Color;
+    }
+    .ViewInsight-Top{
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Top-Wrapper{
+            width: 50%;
+            .Top-Labels{
+                margin: 20px 0;
+                h1{
+                    font-size: 42px;
+                    color: $Text-Color2;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+            .Top-Info{
+                display: flex;
+                justify-content: space-between;
+                h3{
+                    font-size: 16px;
+                    color: $Text-Color2;
+                }
+                border-bottom: 3px solid $Text-Color;
+            }
+            .Top-Description{
+                h4{
+                    margin: 10px 0;
+                    color: $Text-Color2;
+                    font-size: 20px;
+                }
+            }
+            .Top-Image{
+                display: flex;
+                justify-content: center;
+                img{
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+    .ViewInsight-Main{
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Wrapper{
+            width: 50%;
+            color: $Text-Color2;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .ViewInsight-Top{
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Top-Wrapper{
+            width: 70% !important;
+            .Top-Labels{
+                margin: 20px 0;
+                h1{
+                    font-size: 42px;
+                    color: $Text-Color2;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+            .Top-Info{
+                display: flex;
+                justify-content: space-between;
+                h3{
+                    font-size: 16px;
+                    color: $Text-Color2;
+                }
+                border-bottom: 3px solid $Text-Color;
+            }
+            .Top-Description{
+                h4{
+                    margin: 10px 0;
+                    color: $Text-Color2;
+                    font-size: 20px;
+                }
+            }
+            .Top-Image{
+                display: flex;
+                justify-content: center;
+                img{
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+    .ViewInsight-Main{
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Wrapper{
+            width: 70% !important;
+            color: $Text-Color2;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .ViewInsight-Top{
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Top-Wrapper{
+            width: 85% !important;
+            .Top-Labels{
+                margin: 20px 0;
+                h1{
+                    font-size: 42px;
+                    color: $Text-Color2;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+            .Top-Info{
+                display: flex;
+                justify-content: space-between;
+                h3{
+                    font-size: 16px;
+                    color: $Text-Color2;
+                }
+                border-bottom: 3px solid $Text-Color;
+            }
+            .Top-Description{
+                h4{
+                    margin: 10px 0;
+                    color: $Text-Color2;
+                    font-size: 20px;
+                }
+            }
+            .Top-Image{
+                display: flex;
+                justify-content: center;
+                img{
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+    .ViewInsight-Main{
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        .ViewInsight-Wrapper{
+            width: 85% !important;
+            color: $Text-Color2;
+        }
+    }
+}

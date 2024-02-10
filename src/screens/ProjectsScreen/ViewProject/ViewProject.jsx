@@ -66,17 +66,17 @@ function ViewProject() {
                             <h3 className='Title'>
                                 Sector
                             </h3>
-                            <h3 className='Sub'>
+                            <h4 className='Sub'>
                                 {Project.sector}
-                            </h3>
+                            </h4>
                         </span>
                         <span>
                             <h3 className='Title'>
                                 Year
                             </h3>
-                            <h3 className='Sub'>
+                            <h4 className='Sub'>
                                 {Project.year}
-                            </h3>
+                            </h4>
                         </span>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ function ViewProject() {
                                 style={{
                                     display:'flex',
                                 }}>
-                                    <CircleIcon></CircleIcon>
+                                    <CircleIcon className='CircleIcon'></CircleIcon>
                                     <h4 className='Sub'>{tag}</h4>
                                 </div>)
                             }

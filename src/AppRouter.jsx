@@ -20,6 +20,8 @@ import EditReview from './screens/DashboardScreen/Reviews/EditReview/EditReview'
 import ViewProject from './screens/ProjectsScreen/ViewProject/ViewProject';
 import ViewInsight from './screens/InsightsScreen/ViewInsight/ViewInsight';
 import { useSelector } from 'react-redux';
+import Error404Screen from './screens/Error404Screen/Error404Screen';
+import PrivacyScreen from './screens/PrivacyScreen/PrivacyScreen';
 
 function AppRouter() {
 
@@ -39,7 +41,7 @@ function AppRouter() {
           </Route>
           <Route path='/login' element={<LoginScreen />}></Route>
           <Route path='/register' element={<RegisterScreen />}></Route>
-            <Route path='dashboard'>
+          <Route path='dashboard'>
                 <Route index={true} element={<DashboardScreen />}/>
                 <Route path='AddServices'>
                 <Route index={true} element={<AddService />}/>
@@ -65,7 +67,9 @@ function AppRouter() {
                 <Route path='EditReview'>
                 <Route path=':ReviewId' element={<EditReview />} />
                 </Route>
-            </Route>
+          </Route>
+          <Route path='/privacy' element={<PrivacyScreen />}></Route>
+          <Route path='*' element={<Error404Screen />}/>
         </Route>
       ));
 

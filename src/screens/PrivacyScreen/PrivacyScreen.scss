@@ -1,0 +1,10 @@
+.PrivacyScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .PrivacyScreen-Wrapper{
+        width: 90%;
+        text-align: center;
+    }
+}

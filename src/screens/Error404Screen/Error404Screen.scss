@@ -1,0 +1,14 @@
+.Error404Screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(5, 83, 228);
+    .Error404Screen-Wrapper{
+        width: 85%;
+        text-align: center;
+        h1{
+            color: white;
+        }
+    }
+}
